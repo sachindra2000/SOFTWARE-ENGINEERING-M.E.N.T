@@ -13,3 +13,6 @@
 6. As a database administrator at the organization, I want to securely add, update, or delete population data from our records, to maintain the integrity and accuracy of our demographic database. 
 
 7. As a government liaison at the organization, I want to view reports on the population of people living in cities versus those not living in cities for each country, to better understand urbanization trends and help in urban planning.
+
+8. As an employee at the organization, I want to log in with my credentials before accessing sensitive population reports, to ensure that sensitive data is protected and only accessible by authorized personnel.
+***
