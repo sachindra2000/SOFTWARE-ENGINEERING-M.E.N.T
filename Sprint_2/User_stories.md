@@ -10,4 +10,4 @@
 
 5. As a member of the cultural research team at the organization, I want to know the number of people who speak Chinese, English, Hindi, Spanish, and Arabic, including the percentage of the world population, to help in planning cultural events and language-based programs.
 
-
+6. As a database administrator at the organization, I want to securely add, update, or delete population data from our records, to maintain the integrity and accuracy of our demographic database. 
