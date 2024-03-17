@@ -7,5 +7,5 @@ PRODUCT OWNER : Tharusha Sachindra
 SCRUM MASTER  : Md Nahid
 TEAM MEMBERS:
 Mingma Dolkar
-Emanuel Ion
+Emanuel Florea
 Mohebul Hasan
