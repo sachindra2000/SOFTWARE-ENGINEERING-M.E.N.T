@@ -1,0 +1,12 @@
+version: 2.1
+orbs:
+  node: circleci/node@4.7.0
+jobs:
+  build:
+    working_directory: ~/SOFTWARE-ENGINEERING-M.E.N.T/Sprint_3/WebApp/src
+    docker:
+      - image: cimg/node:lts
+    steps:
+      -checkout:
+        path: ~/SOFTWARE-ENGINEERING-M.E.N.T/Sprint_3/WebApp
+      -run: npm install
