@@ -20,6 +20,9 @@ app.set('view engine', 'pug');
 app.set('views', './views');
 app.use(express.static('static'));
 
+// Use the routes by passing the app and db as arguments
+countryRoutes(app, db);
+
 
 // Home Page route
 app.get("/", (req, res) => {
