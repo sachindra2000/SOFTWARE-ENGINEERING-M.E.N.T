@@ -22,7 +22,7 @@ app.use(express.static('static'));
 
 // Use the routes by passing the app and db as arguments
 countryRoutes(app, db);
-
+cityRoutes(app, db);
 
 // Home Page route
 app.get("/", (req, res) => {
