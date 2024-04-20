@@ -49,11 +49,12 @@ module.exports = (app, db, { checkAuthenticated }) => {
                 return res.status(500).send("Server Error");
             }
 
+            // Format the results to include commas in the population and surface area numbers
             const reports = results.map((result) => ({
                 Name: result.Name,
-                TotalPopulation: Number(result.TotalPopulation).toLocaleString(), // Cast to Number and format
-                CityPopulation: Number(result.CityPopulation).toLocaleString(), // Cast to Number and format
-                NonCityPopulation: Math.max(result.TotalPopulation - result.CityPopulation, 0).toLocaleString() // Ensure non-negative, cast result to Number, and format
+                TotalPopulation: Number(result.TotalPopulation).toLocaleString(), 
+                CityPopulation: Number(result.CityPopulation).toLocaleString(), 
+                NonCityPopulation: Math.max(result.TotalPopulation - result.CityPopulation, 0).toLocaleString()
             }));
 
             res.render("populations", {
