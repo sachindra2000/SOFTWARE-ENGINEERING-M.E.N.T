@@ -1,0 +1,237 @@
+ /********** Layout Global Styles ***********/
+ 
+/* Reset default browser styles */
+ html,
+body {
+    font-size: 14px; /* Default font size */
+    font-family: 'Poppins', sans-serif; /* Default font family */
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
+    width: 100%; /* Full width */
+    overflow-x: hidden; /* Hide horizontal overflow */
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+    background-size: cover; /* Cover the entire container */
+    background-attachment: fixed; /* Fixed background */
+    background-position: center center; /* Center the background */
+}
+
+ /********** Individual pages' background ***********/
+
+/* Homepage gradient */
+.home-gradient {
+    background: linear-gradient(90deg, hsla(18, 76%, 85%, 1) 0%, hsla(203, 69%, 84%, 1) 100%); /* Gradient background */
+}
+
+/* Individual backgrounds for each page */
+.country-bg { background-image: url('images/Background/countryBG.jpg'); } /* Credit to Rod Long: https://unsplash.com/photos/snow-covered-mountain-reflections-at-daytime-0x-TlW_QsYk */
+.city-bg { background-image: url('images/Background/cityBG.jpg'); } /* Credit to Dmitry Tomashek: https://unsplash.com/photos/an-aerial-view-of-a-city-at-sunset-6EzsiWEo5VE */
+.capital-bg { background-image: url('images/Background/capitalBG.jpg'); } /* Credit to Lukas Zischke: https://unsplash.com/photos/aerial-view-of-city-buildings-during-daytime--I_RPyaxAGc */
+.population-bg { background-image: url('images/Background/populationBG.jpg'); } /* Credit to Joseph Chan: https://unsplash.com/photos/group-of-people-standing-near-building-M381Eor6p0E */ 
+.language-bg { background-image: url('images/Background/languageBG.jpg'); } /* Credit to Isaac Chou: https://unsplash.com/photos/black-and-white-chalk-board-icVaVSd-8kQ */
+
+/* Space between main content and Footer */
+main {
+    padding-bottom: 15rem; /* Space from the bottom */
+}
+
+/********** CSS Styles for Navbar ***********/
+
+nav.navbar {
+    background: #2b2d42; /* Updated background color */
+    padding: 10px; /* Navbar's padding */
+    display: flex; /* Flexbox for alignment */
+    justify-content: space-between; /* Positions items to the left, center, and right */
+    align-items: center; /* Vertically align items in the navbar */
+    position: fixed; /* Fixed positioning makes the navbar stay at the top */
+    top: 0; /* Align the navbar at the top */
+    left: 0; /* Align the navbar to the left */
+    right: 0; /* Stretch the navbar to the right */
+    box-shadow: 0 3px 7px rgba(0, 0, 0, 0.5); /* Shadow for depth */
+    z-index: 1000; /* Ensures navbar stays above other content */
+}
+
+/* Navbar links */
+.navbar-left a,
+.navbar-center a,
+.navbar-right a {
+    display: block; /* Block-level elements for full clickable area */
+    color: white; /* Text color */
+    text-align: center; /* Center the text */
+    padding: 15px 20px; /* Padding for clickable area */
+    text-decoration: none; /* No underline for links */
+    font-size: 16px; /* Font size */
+    font-weight: bold; /* Font weight */
+}
+
+.navbar-left,
+.navbar-center ul,
+.navbar-right {
+    display: flex; /* Flexbox for alignment */
+    align-items: center; /* Vertically align items in the navbar */
+}
+
+/* Navbar report links */
+.navbar-center ul {
+    list-style: none; /* Remove default list style */
+    justify-content: center; /* Center the list items */
+    flex-grow: 1; /* Allows the list to take up available space */
+    padding: 0; /* Remove default padding */
+    margin: 0; /* Remove default margin */
+}
+
+.navbar-center ul li {
+    margin: 0 10px; /* Space out the list items */
+}
+
+.navbar-right {
+    margin-right: 10px; /* Space for the right side of the navbar */
+}
+
+/* Navbar button */
+.navbar-right a.button {
+    background-color: #05668d; /* Button color */
+    border: none; /* Remove default border */
+    padding: 5px 20px 5px 20px; /* Padding for the button */
+    font-weight: bold; /* Font weight */
+    border-radius: 20px; /* Rounded corners */
+    text-decoration: none; /* No underline */
+    color: #fff; /* Text color */
+    transition: background-color 0.3s ease; /* Smooth transition on hover */
+    margin-left: 10px; /* Separate the button from other links */
+    margin-right: 24px; /* Space from the right */
+}
+
+/* Navbar button hover effect */
+.navbar-right a.button:hover {
+    background-color: #028090; /* Button color on hover */
+    transform: scale(1.05); /* Slightly increase the button size on hover */
+}
+
+/********** CSS Styles for Footer ***********/
+
+footer {
+    background: #2b2d42; /* Background color */
+    color: white; /* Text color */
+    padding: 10px; /* Padding */
+    display: flex; /* Flexbox for alignment */
+    align-items: center; /* Vertically align items in the footer */
+    justify-content: space-between; /* Positions text to the center and icon to the end */
+    text-align: center; /* Ensure text is centered */
+    position: fixed; /* Fix footer to the bottom */
+    bottom: 0; /* Align the footer at the bottom */
+    left: 0; /* Align the footer to the left */
+    right: 0; /* Stretch the footer to the right */
+    font-size: 13px; /* Footer's font size */
+    box-shadow: 0 -1px 7px rgba(0, 0, 0, 0.5); /* Shadow for depth, inverted direction */
+}
+
+/* Footer links */
+footer a {
+    color: white; /* Icon color */
+    display: flex; /* Ensures the link is properly aligned */
+    align-items: center; /* Center the icon vertically */
+    text-decoration: none; /* No underline for the link */
+    margin-right: 20px; /* Align the icon to the right */
+}
+
+/* Footer icon */
+footer i {
+    font-size: 20px; /* Icon size */
+}
+
+/* Footer text */
+footer p {
+    margin: 0; /* Remove default margin */
+    padding-right: 20px; /* Space after the text, before the icon */
+    display: flex; /* Flexbox for alignment */
+    align-items: center; /* Vertically align items in the footer */
+    justify-content: space-between; /* Positions text to the center and icon to the end */
+    flex-grow: 1; /* Allows the text to take up available space, pushing the icon to the end */
+}
+
+/************** All report pages title ************/
+
+h1 {
+    text-align: center; /* Center the title */
+    margin-top: 10rem; /* Space from the top */
+    color: #073b4c; /* Title's color */
+    font-size: calc(0.5rem + 1.5vw);  /* Title's font size starts at 1rem and grows with the viewport width */
+}
+
+/************** Table ************/
+
+/* Table container styles */
+table {
+    width: 90%; /* Table width */
+    border-collapse: collapse; /* Collapse borders into a single border */
+    margin: 3rem auto; /* Center the table */
+    margin-top: 8rem; /* Space from the top */
+    overflow: hidden; /* Hide any overflow content */
+	box-shadow: 0 0 40px rgba(0,0,0,0.1); /* Shadow for depth */
+    border-radius: 30px; /* Rounded corners */
+}
+
+/* Table Cells styles */
+th, td {
+	padding: 15px; /* Padding for cells */
+	color: #073b4c; /* Text color */
+    text-align: left; /* Text alignment */
+    font-weight: bold; /* Bold text */
+    font-size: 1.1rem; /* Font size */
+}
+
+/* Table header styles */
+th {
+    background-color: #55608f; /* Header background color */
+    color: white; /* Header text color */
+    text-align: left; /* Text alignment */
+}
+
+/* Table body styles */
+tbody {
+	td {
+		position: relative; /* Position relative for hover effect */
+		&:hover { /* Hover effect for rows */
+			&:before { /* Pseudo-element for hover effect */
+				content: ""; /* Empty content */
+				position: absolute; /* Position absolutely */
+				left: 0; /* Align to the left */
+				right: 0; /* Align to the right */
+				top: -9999px; /* Hide the top */
+				bottom: -9999px; /* Hide the bottom */
+				z-index: -1; /* Behind the row */
+			}
+		}
+	}
+}
+
+/* Table body styles */
+tbody tr {
+    background-color: rgba(255,255,255,0.9); /* Uniform background color for all rows */
+}
+
+/* Table row hover effect */
+tbody tr:hover {
+    background-color: rgba(255,255,255,0.7); /* Hover effect for rows */
+}
+
+/* Table header text styles */
+th {
+    padding-top: 20px; /* Padding top */
+    padding-bottom: 24px; /* Padding bottom */
+}
+
+
+/*********** Search input *************/
+
+#searchInput {
+    width: 165px; /* Width of the search box */
+    height: 34px; /* Height of the search box */
+    border: 1px solid #ddd; /* Border color */
+    border-radius: 20px; /* Rounded corners */
+    padding: 1px 8px; /* Padding inside the search box */
+    margin-top: 48px; /* Spacing between the search box and the table */
+    font-size: 16px; /* Font size inside the search box */
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2); /* Add shadow for depth */
+    outline: none; /* Remove the default focus outline */
+}
