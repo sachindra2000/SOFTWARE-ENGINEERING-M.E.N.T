@@ -516,3 +516,52 @@ button:focus {
         border-radius: 110px; /* Adjust border-radius for smaller screen */
     }
 }
+
+/*********** Go Top/Bottom Button *************/
+
+/* Scroll to top and bottom buttons */
+#scrollToTopButton, #scrollToBottomButton {
+    position: fixed; /* Fixed positioning */
+    bottom: 4rem; /* Position from the bottom */
+    right: 1.2rem; /* Position from the right */
+    z-index: 99; /* Ensure it's above other content */
+    border: none; /* Remove default border */
+    outline: none; /* Remove default outline */
+    background-color: #333; /* Background color */
+    color: white; /* Text color */
+    cursor: pointer; /* Change cursor to pointer */
+    padding: 14px; /* Padding for the button */
+    border-radius: 50%; /* Makes it circular */
+    display: flex; /* Flexbox for alignment */
+    align-items: center; /* Vertical center */
+    justify-content: center; /* Horizontal center */
+    font-size: 24px; /* Adjust if needed */
+    line-height: 0.5; /* Adjust line-height for better control */
+    width: 48px; /* Set a specific width */
+    height: 48px; /* Set a specific height */
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.4); /* Add shadow for depth */
+}
+
+/* Pseudo-elements for arrows */
+#scrollToTopButton::before, #scrollToBottomButton::before {
+    display: block; /* Block-level element */
+    content: ''; /* Empty content */
+    width: 100%; /* Full width */ 
+    text-align: center; /* Center the content */
+}
+
+#scrollToTopButton::before {
+    content: '↑'; /* Unicode upwards arrow */
+}
+
+#scrollToBottomButton::before {
+    content: '↓'; /* Unicode downwards arrow */
+}
+
+#scrollToTopButton {
+    display: none; /* Hidden by default */
+}
+
+#scrollToBottomButton {
+    display: none; /* Hidden by default */
+}
