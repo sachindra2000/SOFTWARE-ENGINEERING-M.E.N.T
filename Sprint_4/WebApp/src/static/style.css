@@ -708,3 +708,22 @@ button:focus {
 }
 
 
+/* New styles for the 'By Continent' dropdown */
+#viewBySelect {
+    width: 165px;
+    height: 34px;
+    border: 1px solid #ddd;
+    border-radius: 20px;
+    padding: 5px 8px;
+    margin-left: 10px; /* Adjust as needed */
+    margin-right: 10px; /* Adjust as needed if you want some space on the right */
+    font-size: 16px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    outline: none;
+    cursor: pointer;
+    background-color: white;
+    background-repeat: no-repeat;
+    background-position: right 15px center;
+    background-size: 12px;
+}
+
