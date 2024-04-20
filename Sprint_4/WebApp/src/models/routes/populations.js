@@ -51,11 +51,9 @@ module.exports = (app, db, { checkAuthenticated }) => {
 
             const reports = results.map((result) => ({
                 Name: result.Name,
-                TotalPopulation: result.TotalPopulation ? result.TotalPopulation.toLocaleString() : '0', // Check for null before formatting
-                CityPopulation: result.CityPopulation ? result.CityPopulation.toLocaleString() : '0', // Check for null before formatting
-                NonCityPopulation: (result.TotalPopulation - result.CityPopulation) >= 0 
-                    ? (result.TotalPopulation - result.CityPopulation).toLocaleString() 
-                    : '0', // Calculate and format, ensuring non-negative result
+                TotalPopulation: Number(result.TotalPopulation).toLocaleString(), // Cast to Number and format
+                CityPopulation: Number(result.CityPopulation).toLocaleString(), // Cast to Number and format
+                NonCityPopulation: Math.max(result.TotalPopulation - result.CityPopulation, 0).toLocaleString() // Ensure non-negative, cast result to Number, and format
             }));
 
             res.render("populations", {
