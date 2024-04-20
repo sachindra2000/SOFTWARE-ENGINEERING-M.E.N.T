@@ -471,3 +471,48 @@ button:focus {
         margin-top: 15px; /* Smaller top margin on smaller screens */
     }
 }
+
+/*********** Pages' Header *************/
+
+/* Header container */
+.header-container {
+    position: relative;  /* Ensure the container is positioned relative to the document */
+    display: flex;  /* Flexbox for alignment */
+    justify-content: center;  /* Center the text horizontally */
+    align-items: center;  /* Center the text vertically */
+    height: 6vh;  /* Set to desired height */
+    width: 23vw;  /* Full viewport width */
+    margin-top: 11rem;  /* Adjust based on your navbar height */
+    margin-left: auto;  /* Center the container horizontally */
+    margin-right: auto;  /* Center the container horizontally */
+    border-radius: 110px;  /* Rounded corners */
+    background-color: #4a4e69;  /* Background color */
+	box-shadow: 0 10px 40px rgba(0,0,0,0.1);  /* Shadow for depth */
+    overflow: hidden;  /* Hide any overflow content */
+}
+  
+/* Header title */
+.header-title {
+    position: relative; /* Ensure the text is positioned in the document flow */
+    color: #fff; /* Choose a text color that stands out over your image */
+    z-index: 1; /* Ensure the text is above the image */
+    margin: 0; /* Remove any default margins */
+    /* text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); */
+}
+
+/* Responsive styles for the header */  
+@media (max-width: 900px) {
+    .header-title {
+        font-size: medium; /* Adjust the font size */
+    }
+}
+  
+/* Mobile and small screens (usually under 768px) */
+@media (max-width: 768px) {
+    .header-container {
+        width: 80vw; /* Adjust width for small screens */
+        height: 5vh; /* Adjust height as needed */
+        margin: 10rem auto 1rem auto; /* Adjust the top margin according to the mobile navbar height */
+        border-radius: 110px; /* Adjust border-radius for smaller screen */
+    }
+}
