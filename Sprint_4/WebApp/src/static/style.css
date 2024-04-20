@@ -565,3 +565,146 @@ button:focus {
 #scrollToBottomButton {
     display: none; /* Hidden by default */
 }
+
+/*********** Register/Login Form *************/
+
+/* Register/Login page background */
+.register-bg {
+    background: linear-gradient(90deg, hsla(18, 76%, 85%, 1) 0%, hsla(203, 69%, 84%, 1) 100%); /* Gradient background */
+    display: flex; /* Flexbox for alignment */
+    flex-direction: column; /* Flex direction column */
+    justify-content: center; /* Aligns vertically */
+    align-items: center; /* Aligns horizontally */
+    width: 100%; /* Full width */
+}
+
+/* Register/Login form container */
+.form-container {
+    margin-left: 12rem; /* Space from the left */
+    margin-top: 10rem; /* Space from the top */
+    background-color: rgba(255,255,255,0.2); /* Semi-transparent background */
+    padding: 60px; /* Padding inside the form */
+    border-radius: 20px; /* Rounded corners */
+    box-shadow: 0 7px 10px rgba(0, 0, 0, 0.1); /* Shadow for depth */
+    width: 40rem; /* Set form width */
+    box-sizing: border-box; /* Includes padding and border in the element's total width and height */
+}
+
+/* Register/Login form labels */
+.form-container label {
+    font-weight: bold; /* Bold text */
+    color: #555; /* Text color */
+    display: block; /* Block-level element */
+}
+
+/* Input fields */
+.form-container input {
+    width: calc(100% - 20px); /* Full width minus padding */
+    padding: 10px; /* Padding inside the input */
+    margin-bottom: 20px; /* Space below the input */
+    border: 0.5px solid #ddd; /* Border color */
+    border-radius: 5px; /* Rounded corners */
+}
+
+/* Submit button */
+.button-container, .link-container {
+    display: flex; /* Flexbox for alignment */
+    justify-content: center; /* Center the content horizontally */
+    align-items: center; /* Center the content vertically */
+    margin-top: 2rem; /* Space from the top */
+}
+
+/* Button styles */
+.btn {
+    padding: 08px 20px; /* Padding for the button */
+    cursor: pointer; /* Change cursor to pointer */
+    text-align: center; /* Center the text */
+    border-radius: 20px; /* Rounded corners */
+    width: 35%; /* Button width */
+    box-sizing: border-box; /* Includes padding and border in the element's total width and height */
+}
+
+/* Link register/login */
+.btn-link {
+    background: none; /* No background */
+    border: none; /* No border */
+    color: #007bff; /* Text color */
+    text-decoration: underline; /* Underline the text */
+    padding: 0; /* No padding */
+    cursor: pointer; /* Makes it clear it's clickable */
+}
+
+/* Link hover effect */
+.btn-link:hover {
+    color: #0056b3; /* Text color on hover */
+}
+
+/* Responsive styles if needed */
+@media (max-width: 768px) {
+    .form-container {
+        width: 90%; /* Adjust width for smaller screens */
+    }
+}
+
+/* Alert Messages */
+.alert {
+    color: #d90429; /* Text color for the alert */
+    text-align: center; /* Center the text inside the alert */
+    width: 100%; /* The alert should take the full width of its parent container */
+    box-sizing: border-box; /* Include padding and border in the width and height of the alert */
+}
+
+
+/*********** Contact Page Form *************/
+
+/* Contact form container, specific to contact page */
+.contact-form-container {
+    background-color: rgba(255,255,255,0.2); /* Semi-transparent background */
+    padding: 60px; /* Padding inside the form */
+    border-radius: 20px; /* Rounded corners */
+    box-shadow: 0 7px 10px rgba(0, 0, 0, 0.1); /* Shadow for depth */
+    max-width: 40rem; /* Set max width for larger screens */
+    width: 100%; /* Full width for smaller screens */
+    box-sizing: border-box; /* Includes padding and border in the element's total width and height */
+    margin: 9rem auto 0 auto; /* This will center the form in the flex container */
+    font-weight: bold; /* Bold text */
+    color: #555; /* Text color */
+}
+
+@media (max-width: 768px) {
+    .contact-form-container {
+        width: 90%; /* Adjust width for smaller screens */
+        margin-top: 6rem; /* Add some top margin on smaller screens */
+        padding: 30px; /* Less padding on smaller screens */
+    }
+}
+
+/* Contact form labels */
+.contact-form-container input,
+.contact-form-container textarea {
+    width: calc(100% - 20px); /* Full width minus padding */
+    padding: 10px; /* Padding inside the input/textarea */
+    margin-bottom: 20px; /* Space below the input/textarea */
+    border: 0.5px solid #ddd; /* Border color */
+    border-radius: 5px; /* Rounded corners */
+}
+
+/* Textarea specific style */
+.contact-form-container textarea {
+    height: 170px; /* Set a fixed height for textarea */
+    resize: vertical; /* Allow only vertical resizing */
+}
+
+.dropdown-container {
+    margin-bottom: 10px; /* Same as input margin for consistent spacing */
+}
+
+
+/* Form section styling */
+.form-section {
+    text-align: center; /* Center the form */
+    margin-top: 2rem; /* Space from the header */
+    margin-bottom: 2rem; /* Space from the table */
+}
+
+
