@@ -1,0 +1,729 @@
+ /********** Layout Global Styles ***********/
+ 
+/* Reset default browser styles */
+ html,
+body {
+    font-size: 14px; /* Default font size */
+    font-family: 'Poppins', sans-serif; /* Default font family */
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
+    width: 100%; /* Full width */
+    overflow-x: hidden; /* Hide horizontal overflow */
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+    background-size: cover; /* Cover the entire container */
+    background-attachment: fixed; /* Fixed background */
+    background-position: center center; /* Center the background */
+}
+
+ /********** Individual pages' background ***********/
+
+/* Homepage gradient */
+.home-gradient {
+    background: linear-gradient(90deg, hsla(18, 76%, 85%, 1) 0%, hsla(203, 69%, 84%, 1) 100%); /* Gradient background */
+}
+
+/* Individual backgrounds for each page */
+.country-bg { background-image: url('images/Background/countryBG.jpg'); } /* Credit to Rod Long: https://unsplash.com/photos/snow-covered-mountain-reflections-at-daytime-0x-TlW_QsYk */
+.city-bg { background-image: url('images/Background/cityBG.jpg'); } /* Credit to Dmitry Tomashek: https://unsplash.com/photos/an-aerial-view-of-a-city-at-sunset-6EzsiWEo5VE */
+.capital-bg { background-image: url('images/Background/capitalBG.jpg'); } /* Credit to Lukas Zischke: https://unsplash.com/photos/aerial-view-of-city-buildings-during-daytime--I_RPyaxAGc */
+.population-bg { background-image: url('images/Background/populationBG.jpg'); } /* Credit to Joseph Chan: https://unsplash.com/photos/group-of-people-standing-near-building-M381Eor6p0E */ 
+.language-bg { background-image: url('images/Background/languageBG.jpg'); } /* Credit to Isaac Chou: https://unsplash.com/photos/black-and-white-chalk-board-icVaVSd-8kQ */
+
+/* Space between main content and Footer */
+main {
+    padding-bottom: 15rem; /* Space from the bottom */
+}
+
+/********** CSS Styles for Navbar ***********/
+
+nav.navbar {
+    background: #2b2d42; /* Updated background color */
+    padding: 10px; /* Navbar's padding */
+    display: flex; /* Flexbox for alignment */
+    justify-content: space-between; /* Positions items to the left, center, and right */
+    align-items: center; /* Vertically align items in the navbar */
+    position: fixed; /* Fixed positioning makes the navbar stay at the top */
+    top: 0; /* Align the navbar at the top */
+    left: 0; /* Align the navbar to the left */
+    right: 0; /* Stretch the navbar to the right */
+    box-shadow: 0 3px 7px rgba(0, 0, 0, 0.5); /* Shadow for depth */
+    z-index: 1000; /* Ensures navbar stays above other content */
+}
+
+/* Navbar links */
+.navbar-left a,
+.navbar-center a,
+.navbar-right a {
+    display: block; /* Block-level elements for full clickable area */
+    color: white; /* Text color */
+    text-align: center; /* Center the text */
+    padding: 15px 20px; /* Padding for clickable area */
+    text-decoration: none; /* No underline for links */
+    font-size: 16px; /* Font size */
+    font-weight: bold; /* Font weight */
+}
+
+.navbar-left,
+.navbar-center ul,
+.navbar-right {
+    display: flex; /* Flexbox for alignment */
+    align-items: center; /* Vertically align items in the navbar */
+}
+
+/* Navbar report links */
+.navbar-center ul {
+    list-style: none; /* Remove default list style */
+    justify-content: center; /* Center the list items */
+    flex-grow: 1; /* Allows the list to take up available space */
+    padding: 0; /* Remove default padding */
+    margin: 0; /* Remove default margin */
+}
+
+.navbar-center ul li {
+    margin: 0 10px; /* Space out the list items */
+}
+
+.navbar-right {
+    margin-right: 10px; /* Space for the right side of the navbar */
+}
+
+/* Navbar button */
+.navbar-right a.button {
+    background-color: #05668d; /* Button color */
+    border: none; /* Remove default border */
+    padding: 5px 20px 5px 20px; /* Padding for the button */
+    font-weight: bold; /* Font weight */
+    border-radius: 20px; /* Rounded corners */
+    text-decoration: none; /* No underline */
+    color: #fff; /* Text color */
+    transition: background-color 0.3s ease; /* Smooth transition on hover */
+    margin-left: 10px; /* Separate the button from other links */
+    margin-right: 24px; /* Space from the right */
+}
+
+/* Navbar button hover effect */
+.navbar-right a.button:hover {
+    background-color: #028090; /* Button color on hover */
+    transform: scale(1.05); /* Slightly increase the button size on hover */
+}
+
+/********** CSS Styles for Footer ***********/
+
+footer {
+    background: #2b2d42; /* Background color */
+    color: white; /* Text color */
+    padding: 10px; /* Padding */
+    display: flex; /* Flexbox for alignment */
+    align-items: center; /* Vertically align items in the footer */
+    justify-content: space-between; /* Positions text to the center and icon to the end */
+    text-align: center; /* Ensure text is centered */
+    position: fixed; /* Fix footer to the bottom */
+    bottom: 0; /* Align the footer at the bottom */
+    left: 0; /* Align the footer to the left */
+    right: 0; /* Stretch the footer to the right */
+    font-size: 13px; /* Footer's font size */
+    box-shadow: 0 -1px 7px rgba(0, 0, 0, 0.5); /* Shadow for depth, inverted direction */
+}
+
+/* Footer links */
+footer a {
+    color: white; /* Icon color */
+    display: flex; /* Ensures the link is properly aligned */
+    align-items: center; /* Center the icon vertically */
+    text-decoration: none; /* No underline for the link */
+    margin-right: 20px; /* Align the icon to the right */
+}
+
+/* Footer icon */
+footer i {
+    font-size: 20px; /* Icon size */
+}
+
+/* Footer text */
+footer p {
+    margin: 0; /* Remove default margin */
+    padding-right: 20px; /* Space after the text, before the icon */
+    display: flex; /* Flexbox for alignment */
+    align-items: center; /* Vertically align items in the footer */
+    justify-content: space-between; /* Positions text to the center and icon to the end */
+    flex-grow: 1; /* Allows the text to take up available space, pushing the icon to the end */
+}
+
+/************** All report pages title ************/
+
+h1 {
+    text-align: center; /* Center the title */
+    margin-top: 10rem; /* Space from the top */
+    color: #073b4c; /* Title's color */
+    font-size: calc(0.5rem + 1.5vw);  /* Title's font size starts at 1rem and grows with the viewport width */
+}
+
+/************** Table ************/
+
+/* Table container styles */
+table {
+    width: 90%; /* Table width */
+    border-collapse: collapse; /* Collapse borders into a single border */
+    margin: 3rem auto; /* Center the table */
+    margin-top: 8rem; /* Space from the top */
+    overflow: hidden; /* Hide any overflow content */
+	box-shadow: 0 0 40px rgba(0,0,0,0.1); /* Shadow for depth */
+    border-radius: 30px; /* Rounded corners */
+}
+
+/* Table Cells styles */
+th, td {
+	padding: 15px; /* Padding for cells */
+	color: #073b4c; /* Text color */
+    text-align: left; /* Text alignment */
+    font-weight: bold; /* Bold text */
+    font-size: 1.1rem; /* Font size */
+}
+
+/* Table header styles */
+th {
+    background-color: #55608f; /* Header background color */
+    color: white; /* Header text color */
+    text-align: left; /* Text alignment */
+}
+
+/* Table body styles */
+tbody {
+	td {
+		position: relative; /* Position relative for hover effect */
+		&:hover { /* Hover effect for rows */
+			&:before { /* Pseudo-element for hover effect */
+				content: ""; /* Empty content */
+				position: absolute; /* Position absolutely */
+				left: 0; /* Align to the left */
+				right: 0; /* Align to the right */
+				top: -9999px; /* Hide the top */
+				bottom: -9999px; /* Hide the bottom */
+				z-index: -1; /* Behind the row */
+			}
+		}
+	}
+}
+
+/* Table body styles */
+tbody tr {
+    background-color: rgba(255,255,255,0.9); /* Uniform background color for all rows */
+}
+
+/* Table row hover effect */
+tbody tr:hover {
+    background-color: rgba(255,255,255,0.7); /* Hover effect for rows */
+}
+
+/* Table header text styles */
+th {
+    padding-top: 20px; /* Padding top */
+    padding-bottom: 24px; /* Padding bottom */
+}
+
+
+/*********** Search input *************/
+
+#searchInput {
+    width: 165px; /* Width of the search box */
+    height: 34px; /* Height of the search box */
+    border: 1px solid #ddd; /* Border color */
+    border-radius: 20px; /* Rounded corners */
+    padding: 1px 8px; /* Padding inside the search box */
+    margin-top: 48px; /* Spacing between the search box and the table */
+    font-size: 16px; /* Font size inside the search box */
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2); /* Add shadow for depth */
+    outline: none; /* Remove the default focus outline */
+}
+
+/*********** Home page styling *************/
+
+/* Header Image */
+header img {
+    width: 100%; /* Full viewport width */
+    height: 100vh; /* Full viewport height */
+    object-fit: cover; /* Cover the entire container */
+    display: flex; /* Flex container */
+    flex-direction: column; /* Flex direction column */
+    justify-content: center; /* Center vertically */
+    align-items: center; /* Center horizontally */
+    text-align: center; /* Center the text */
+}
+
+/* Header's first text */
+header h2 {
+    position: absolute; /* Position absolutely within the relative container */
+    top: 20%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Adjust positioning to truly center */
+    color: #4a4e69; /* Adjust color as needed */
+    font-size: 3rem; /* Adjust size as needed */
+}
+
+/* Header's second text */
+header h3 {
+    position: absolute; /* Position h3 absolutely within the relative container */
+    top: 55%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Adjust positioning to truly center */
+    color: #b5838d; /* Adjust color as needed */
+    font-size: 3rem; /* Adjust size as needed */
+    background-color: rgba(0, 0, 0, 0.4); /* Semi-transparent background */
+    padding: 0 1.3rem; /* Padding around the text */
+    border-radius: 30px; /* Rounded corners */
+}
+
+/* Blinking text animation */
+.blinking-word {
+    animation: blink-animation 4s infinite; /* Blinking animation */
+}
+  
+@keyframes blink-animation {
+    0%, 100% { opacity: 1; } /* Start and end with opacity 1 */
+    50% { opacity: 0; } /* Halfway opacity 0 */
+}  
+
+/* Home page title */
+h4 {
+    text-align: center; /* Center the heading */
+    margin: 10rem; /* Space from the top */
+    color: #4a4e69; /* Heading color */
+    font-size: 3rem;  /* Heading font size */
+
+}
+
+/* Introduction and ending text */
+.introduction {
+    color: #6c757d; /* Default text color, change as needed */
+    font-size: 1.5rem; /* Default font size, change as needed */
+    margin: 2rem auto; /* Vertical margins with auto horizontal margins */
+    text-align: center; /* Center align text if it wraps to multiple lines */
+    max-width: 63%; /* Maximum width with auto margins will center the text block */
+    padding: 1rem; /* Add padding if you want some space inside the text block */
+}
+
+/* Main content blocks */
+.how-it-works-container {
+    display: flex; /* Establish flex container */
+    align-items: center; /* Center align vertically */
+    justify-content: flex-start; /* Align items to the left */
+    margin-top: 10rem; /* Margin top */
+    margin-bottom: 12rem; /* Provide bottom margin for space */
+}
+
+/* Screenshot and description blocks */
+.screenshot, .description {
+    flex: 1; /* Assign flex grow to both so they share the space */
+    max-width: 50%; /* Max width set to half of the container width */
+    margin: 0 3.5rem; /* Add margin for spacing */
+}
+
+/* Screenshot image */
+.screenshot img {
+    border-radius: 25px; /* Rounded borders */
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2); /* Drop shadow */
+    max-width: 100%; /* Width to take in his block */
+    height: auto; /* Maintain aspect ratio */
+}
+
+/* Icon container */
+.icon-header-container {
+    display: flex; /* Establish flex container */
+    align-items: center; /* Center align vertically */
+    gap: 0.5rem; /* Add some space between the icon and the text */
+}
+
+/* Custom CSS for all Font Awesome `solid` types of icons */
+.fa-solid {
+    color: #05668d; /* Icon color */
+    font-size: 2rem; /* Icon size */
+}
+
+/* Screenshot's description title */
+.description h5 {
+    font-size: 1.5rem; /* Font size */
+    color: #05668d; /* Text color */
+    margin:0.5rem; /* Margin between the description title and icon */
+}
+
+/* Screenshot description paragraph */
+.description p {
+    font-size: 1.2rem; /* Font size */
+    color: #6c757d; /* Text color */
+}
+
+/* Gradient line that separes the blocks */
+.gradient-line {
+    height: 1px; /* Thickness of the line */
+    background: linear-gradient(to right, transparent, #bfbdc1, transparent); /* Gradient line */
+    box-shadow: 0 0px 0px rgba(0, 0, 0, 0.1); /* Shadow effect */
+    width: 80%; /* Width on the page */
+    margin: 2rem auto; /* Center the line horizontally */
+}
+  
+/******** Search box *************/
+
+/* Change border and shadow when the search box is clicked on (is in focus) */
+#searchInput:focus {
+    border-color: #aaa;  /* Darker border on focus */
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.2); /* Add shadow for depth */
+}
+
+/*********** Dropdown Menus *************/
+
+/* Style the dropdown container */
+#continentSelect, #regionSelect {
+    width: 165px;        /* Width of the dropdown to align with the search box */
+    height: 34px;        /* Height to match the search input */
+    border: 1px solid #ddd; /* Border to match the search input */
+    border-radius: 20px; /* Rounded corners to match the search input */
+    padding: 5px 8px;   /* Padding for content inside the dropdown */
+    margin-left: 10px;    /* Vertical spacing to align with the search input */
+    font-size: 16px;     /* Font size to match the search input */
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2); /* Shadow for depth, matching the search input */
+    outline: none;       /* Remove the default focus outline to match the search input */
+    cursor: pointer;     /* Change cursor to pointer to indicate dropdown functionality */
+    background-color: white; /* Background color for the dropdown */
+}
+
+/* Style the options */
+#continentSelect option, #regionSelect option {
+    color: black; /* Text color for options */
+}
+
+/* Change border and shadow when a dropdown is focused */
+#continentSelect:focus, #regionSelect:focus {
+    border-color: #aaa;  /* Darker border on focus to match the search input */
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.2); /* Enhanced shadow on focus for depth */
+}
+
+/*********** Search Button *************/
+
+/* Style the Apply button */
+button {
+    height: 38px;  /* Match the height of the search input and dropdowns */
+    border: none;  /* Remove default border */
+    border-radius: 20px;  /* Rounded corners to match other form elements */
+    padding: 0 26px;  /* Horizontal padding */
+    font-size: 17px;  /* Font size to match the search input and dropdowns */
+    font-weight: bold;  /* Bold font for better visibility */
+    color: white;  /* Text color */
+    background-color: #55608f;  /* Background color to match your navbar button */
+    cursor: pointer;  /* Change cursor to pointer to indicate clickable button */
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);  /* Box shadow for depth, similar to the search input and dropdowns */
+    transition: background-color 0.3s;  /* Smooth transition for hover effect */
+    margin-left: 10px;  /* Space from the preceding form element */
+}
+
+/* Hover effect for the button */
+button:hover {
+    background-color: #676f98;  /* Darker shade on hover for interaction feedback */
+    transform: scale(1.05);  /* Slightly increase size to indicate interactivity */
+}
+
+/* Focus effect to match hover, ensuring accessibility */
+button:focus {
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.4);  /* Enhanced shadow for focus indication */
+    outline: none;  /* Remove default focus outline */
+}
+
+/*********** Top N Cities Input *************/
+
+/* Style the Top N cities input box */
+#topNInput {
+    width: 165px;  /* Width to align with the search box and dropdowns */
+    height: 34px;  /* Height to match the search input and dropdowns */
+    border: 1px solid #ddd;  /* Border to match the search input */
+    border-radius: 20px;  /* Rounded corners for consistency */
+    padding: 1px 8px;  /* Padding inside the input box */
+    margin-left: 10px;  /* Margin to the left to space it out from other elements */
+    font-size: 16px;  /* Font size to match other inputs */
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);  /* Shadow for depth */
+    outline: none;  /* Remove the default focus outline */
+}
+
+/* Change border and shadow when the Top N cities box is focused */
+#topNInput:focus {
+    border-color: #aaa;  /* Darker border on focus */
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.2); /* Enhanced shadow on focus for depth */
+}
+
+/* Style adjustments for smaller screens or to ensure consistency */
+@media (max-width: 768px) {
+    /* Styles for the search input */
+    #searchInput {
+        margin: 10px; /* Add some margin to not touch the edges */
+        font-size: medium; /* Adjust font-size for mobile */
+    }
+    /* Styles for the dropdowns */
+    select {
+        margin: 10px; /* Align margin with search input */
+        font-size: medium; /* Adjust font-size for mobile */
+        height: auto; /* Make height auto to fit the content */
+        padding: 8px 8px; /* Adjust padding to be more touch-friendly */
+    }
+    #topNInput {
+        margin-top: 10px; /* Smaller top margin on smaller screens */
+        height: auto;  /* Allow the input to adjust its width on smaller screens */
+        padding: 8px 8px; /* Adjust padding to be more touch-friendly */
+    }
+    button {
+        margin-top: 15px; /* Smaller top margin on smaller screens */
+    }
+}
+
+/*********** Pages' Header *************/
+
+/* Header container */
+.header-container {
+    position: relative;  /* Ensure the container is positioned relative to the document */
+    display: flex;  /* Flexbox for alignment */
+    justify-content: center;  /* Center the text horizontally */
+    align-items: center;  /* Center the text vertically */
+    height: 6vh;  /* Set to desired height */
+    width: 23vw;  /* Full viewport width */
+    margin-top: 11rem;  /* Adjust based on your navbar height */
+    margin-left: auto;  /* Center the container horizontally */
+    margin-right: auto;  /* Center the container horizontally */
+    border-radius: 110px;  /* Rounded corners */
+    background-color: #4a4e69;  /* Background color */
+	box-shadow: 0 10px 40px rgba(0,0,0,0.1);  /* Shadow for depth */
+    overflow: hidden;  /* Hide any overflow content */
+}
+  
+/* Header title */
+.header-title {
+    position: relative; /* Ensure the text is positioned in the document flow */
+    color: #fff; /* Choose a text color that stands out over your image */
+    z-index: 1; /* Ensure the text is above the image */
+    margin: 0; /* Remove any default margins */
+    /* text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); */
+}
+
+/* Responsive styles for the header */  
+@media (max-width: 900px) {
+    .header-title {
+        font-size: medium; /* Adjust the font size */
+    }
+}
+  
+/* Mobile and small screens (usually under 768px) */
+@media (max-width: 768px) {
+    .header-container {
+        width: 80vw; /* Adjust width for small screens */
+        height: 5vh; /* Adjust height as needed */
+        margin: 10rem auto 1rem auto; /* Adjust the top margin according to the mobile navbar height */
+        border-radius: 110px; /* Adjust border-radius for smaller screen */
+    }
+}
+
+/*********** Go Top/Bottom Button *************/
+
+/* Scroll to top and bottom buttons */
+#scrollToTopButton, #scrollToBottomButton {
+    position: fixed; /* Fixed positioning */
+    bottom: 4rem; /* Position from the bottom */
+    right: 1.2rem; /* Position from the right */
+    z-index: 99; /* Ensure it's above other content */
+    border: none; /* Remove default border */
+    outline: none; /* Remove default outline */
+    background-color: #333; /* Background color */
+    color: white; /* Text color */
+    cursor: pointer; /* Change cursor to pointer */
+    padding: 14px; /* Padding for the button */
+    border-radius: 50%; /* Makes it circular */
+    display: flex; /* Flexbox for alignment */
+    align-items: center; /* Vertical center */
+    justify-content: center; /* Horizontal center */
+    font-size: 24px; /* Adjust if needed */
+    line-height: 0.5; /* Adjust line-height for better control */
+    width: 48px; /* Set a specific width */
+    height: 48px; /* Set a specific height */
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.4); /* Add shadow for depth */
+}
+
+/* Pseudo-elements for arrows */
+#scrollToTopButton::before, #scrollToBottomButton::before {
+    display: block; /* Block-level element */
+    content: ''; /* Empty content */
+    width: 100%; /* Full width */ 
+    text-align: center; /* Center the content */
+}
+
+#scrollToTopButton::before {
+    content: '↑'; /* Unicode upwards arrow */
+}
+
+#scrollToBottomButton::before {
+    content: '↓'; /* Unicode downwards arrow */
+}
+
+#scrollToTopButton {
+    display: none; /* Hidden by default */
+}
+
+#scrollToBottomButton {
+    display: none; /* Hidden by default */
+}
+
+/*********** Register/Login Form *************/
+
+/* Register/Login page background */
+.register-bg {
+    background: linear-gradient(90deg, hsla(18, 76%, 85%, 1) 0%, hsla(203, 69%, 84%, 1) 100%); /* Gradient background */
+    display: flex; /* Flexbox for alignment */
+    flex-direction: column; /* Flex direction column */
+    justify-content: center; /* Aligns vertically */
+    align-items: center; /* Aligns horizontally */
+    width: 100%; /* Full width */
+}
+
+/* Register/Login form container */
+.form-container {
+    margin-left: 12rem; /* Space from the left */
+    margin-top: 10rem; /* Space from the top */
+    background-color: rgba(255,255,255,0.2); /* Semi-transparent background */
+    padding: 60px; /* Padding inside the form */
+    border-radius: 20px; /* Rounded corners */
+    box-shadow: 0 7px 10px rgba(0, 0, 0, 0.1); /* Shadow for depth */
+    width: 40rem; /* Set form width */
+    box-sizing: border-box; /* Includes padding and border in the element's total width and height */
+}
+
+/* Register/Login form labels */
+.form-container label {
+    font-weight: bold; /* Bold text */
+    color: #555; /* Text color */
+    display: block; /* Block-level element */
+}
+
+/* Input fields */
+.form-container input {
+    width: calc(100% - 20px); /* Full width minus padding */
+    padding: 10px; /* Padding inside the input */
+    margin-bottom: 20px; /* Space below the input */
+    border: 0.5px solid #ddd; /* Border color */
+    border-radius: 5px; /* Rounded corners */
+}
+
+/* Submit button */
+.button-container, .link-container {
+    display: flex; /* Flexbox for alignment */
+    justify-content: center; /* Center the content horizontally */
+    align-items: center; /* Center the content vertically */
+    margin-top: 2rem; /* Space from the top */
+}
+
+/* Button styles */
+.btn {
+    padding: 08px 20px; /* Padding for the button */
+    cursor: pointer; /* Change cursor to pointer */
+    text-align: center; /* Center the text */
+    border-radius: 20px; /* Rounded corners */
+    width: 35%; /* Button width */
+    box-sizing: border-box; /* Includes padding and border in the element's total width and height */
+}
+
+/* Link register/login */
+.btn-link {
+    background: none; /* No background */
+    border: none; /* No border */
+    color: #007bff; /* Text color */
+    text-decoration: underline; /* Underline the text */
+    padding: 0; /* No padding */
+    cursor: pointer; /* Makes it clear it's clickable */
+}
+
+/* Link hover effect */
+.btn-link:hover {
+    color: #0056b3; /* Text color on hover */
+}
+
+/* Responsive styles if needed */
+@media (max-width: 768px) {
+    .form-container {
+        width: 90%; /* Adjust width for smaller screens */
+    }
+}
+
+/* Alert Messages */
+.alert {
+    color: #d90429; /* Text color for the alert */
+    text-align: center; /* Center the text inside the alert */
+    width: 100%; /* The alert should take the full width of its parent container */
+    box-sizing: border-box; /* Include padding and border in the width and height of the alert */
+}
+
+
+/*********** Contact Page Form *************/
+
+/* Contact form container, specific to contact page */
+.contact-form-container {
+    background-color: rgba(255,255,255,0.2); /* Semi-transparent background */
+    padding: 60px; /* Padding inside the form */
+    border-radius: 20px; /* Rounded corners */
+    box-shadow: 0 7px 10px rgba(0, 0, 0, 0.1); /* Shadow for depth */
+    max-width: 40rem; /* Set max width for larger screens */
+    width: 100%; /* Full width for smaller screens */
+    box-sizing: border-box; /* Includes padding and border in the element's total width and height */
+    margin: 9rem auto 0 auto; /* This will center the form in the flex container */
+    font-weight: bold; /* Bold text */
+    color: #555; /* Text color */
+}
+
+@media (max-width: 768px) {
+    .contact-form-container {
+        width: 90%; /* Adjust width for smaller screens */
+        margin-top: 6rem; /* Add some top margin on smaller screens */
+        padding: 30px; /* Less padding on smaller screens */
+    }
+}
+
+/* Contact form labels */
+.contact-form-container input,
+.contact-form-container textarea {
+    width: calc(100% - 20px); /* Full width minus padding */
+    padding: 10px; /* Padding inside the input/textarea */
+    margin-bottom: 20px; /* Space below the input/textarea */
+    border: 0.5px solid #ddd; /* Border color */
+    border-radius: 5px; /* Rounded corners */
+}
+
+/* Textarea specific style */
+.contact-form-container textarea {
+    height: 170px; /* Set a fixed height for textarea */
+    resize: vertical; /* Allow only vertical resizing */
+}
+
+.dropdown-container {
+    margin-bottom: 10px; /* Same as input margin for consistent spacing */
+}
+
+
+/* Form section styling */
+.form-section {
+    text-align: center; /* Center the form */
+    margin-top: 2rem; /* Space from the header */
+    margin-bottom: 2rem; /* Space from the table */
+}
+
+
+/* New styles for the 'By Continent' dropdown */
+#viewBySelect {
+    width: 165px;
+    height: 34px;
+    border: 1px solid #ddd;
+    border-radius: 20px;
+    padding: 5px 8px;
+    margin-left: 10px; /* Adjust as needed */
+    margin-right: 10px; /* Adjust as needed if you want some space on the right */
+    font-size: 16px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    outline: none;
+    cursor: pointer;
+    background-color: white;
+    background-repeat: no-repeat;
+    background-position: right 15px center;
+    background-size: 12px;
+}
+

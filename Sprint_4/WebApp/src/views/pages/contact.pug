@@ -1,0 +1,33 @@
+extends ../layouts/layout.pug
+
+block content
+    //- Contact Page
+    body.register-bg
+        p.introduction(style="margin-top: 18rem;") Feel free to drop us a message. We value your feedback and enquiries.
+
+        //- Contact Form
+        form(action='/contact', method='POST').contact-form-container
+            label(for='name') Name
+            input(type='text', name='name', required=true)
+            
+            label(for='email') Email
+            input(type='email', name='email', required=true)
+
+            label(for='message') Your Message
+            textarea(name='message', required=true)
+
+            //- Check for success messages
+            if success
+                .alert(style="color: #2a9d8f;")= success
+                if query.success === 'true'
+                    script.
+                        setTimeout(function() {
+                            window.location.href = "/";
+                        }, 5000); // Redirect to Home after 5 seconds
+            
+            //- Check for error messages
+            if error
+                .alert= error
+
+            .button-container
+                button(type='submit').btn.btn-primary Send

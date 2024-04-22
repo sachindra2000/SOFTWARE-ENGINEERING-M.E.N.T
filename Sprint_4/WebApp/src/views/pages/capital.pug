@@ -1,0 +1,40 @@
+extends ../layouts/layout.pug
+include ../formTemplate.pug
+
+block content
+    //- Capital Cities page
+    body.capital-bg
+    .header-container
+        h1.header-title Capital Cities Data
+
+    //- Capital Cities search form
+    +form('/capitals','capitalName', 'Search capitals...')
+
+    table
+        //- Capital Cities table header
+        thead
+            tr  
+                th Sl/No
+                th Name
+                th Country
+                th Population
+
+        //- Capital Cities Table Data
+        tbody
+            //- Loop through capitals
+            each capital, index in capitals
+                tr
+                    td= index + 1
+                    td= capital.Name
+                    td= capital.CountryName
+                    td= capital.Population.toLocaleString()
+
+    //- Scroll-to-Top Button
+    button#scrollToTopButton
+
+    //- Scroll-to-Bottom Button
+    button#scrollToBottomButton
+
+    //- JS Scripts
+    script(src="/clientSide/scroll.js")
+    script(src="/clientSide/formSetup.js")

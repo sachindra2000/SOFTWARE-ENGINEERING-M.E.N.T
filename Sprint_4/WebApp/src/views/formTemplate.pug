@@ -1,0 +1,13 @@
+//- This is a template for the form that will be used to filter the data and imported into the pages that require it
+//- It uses predefined variables to make it more flexible
+
+mixin form(actionUrl, searchInputName, searchInputPlaceholder)
+    form(action=actionUrl method='get' style='text-align: center;')
+        input#searchInput(type='text' name=searchInputName placeholder=searchInputPlaceholder)
+        select#continentSelect(name='continent')
+            option(value='') Select Continent
+        select#regionSelect(name='region')
+            option(value='') Select Region
+        input#topNInput(type='number' name='topN' placeholder='Top N countries' min='1' style='width: 150px;')
+        button(type='submit') Apply
+
