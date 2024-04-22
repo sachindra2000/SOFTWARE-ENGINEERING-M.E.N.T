@@ -1,0 +1,31 @@
+extends ../layouts/layout.pug
+
+block content
+    //- Language Data page
+    body.language-bg
+    .header-container
+        h1.header-title Language Data
+
+        //- Search Form
+        //-form(action='/languages' method='get')
+            //-input#searchInput(type='text' name='searchLanguage' placeholder='Search languages...')
+            //-button(type='submit') Search
+
+    table
+        //- Language Table Header
+        thead
+            tr
+                th S/N
+                th Language
+                th Number of Speakers
+                th Percentage of World Population
+
+        //- Language Table Data
+        tbody
+            //- Loop through languages
+            each language, index in languages
+                tr
+                    td= index + 1
+                    td= language.Language
+                    td= language.Speakers.toLocaleString()
+                    td= language.Percentage.toFixed(2) + '%'

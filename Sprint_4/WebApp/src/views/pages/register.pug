@@ -1,0 +1,28 @@
+extends ../layouts/layout.pug
+
+block content
+    //- Register Page
+    body.register-bg
+        p.introduction(style="margin-top: 18rem;") For access to our services, please register or login if you already have an account.
+
+        //- Register Form    
+        form(action='/register', method='POST').form-container
+            label(for='email') Email
+            input(type='email', name='email', required=true)
+
+            label(for='password') Password
+            input(type='password', name='password', required=true)
+
+            label(for='password2') Confirm Password
+            input(type='password', name='password2', required=true)
+
+            //- Error alert in place
+            if message
+                .alert #{message}
+
+            .button-container
+                button(type='submit').btn.btn-primary Register
+
+            //- Redirect link to the Login page
+            .link-container
+                a(href='/login').btn-link Already have an account? Login
