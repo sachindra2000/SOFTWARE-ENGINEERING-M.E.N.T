@@ -1,0 +1,35 @@
+extends ../layouts/layout.pug
+
+block content
+    //- Add Country Page
+    body.register-bg
+        p.introduction(style="margin-top: 18rem;") Add New Country
+        
+        //- Add Country Form
+        form(action="/add-country", method="POST").contact-form-container
+            label(for="code") Country Code
+            input(type="text", name="code", required=true)
+
+            label(for="name") Country Name
+            input(type="text", name="name", required=true)
+
+            label(for="continent") Continent
+            input(type="text", name="continent", required=true)
+
+            label(for="region") Region
+            input(type="text", name="region", required=true)
+
+            label(for="population") Population
+            input(type="number", name="population", required=true)
+
+            //- Display error messages
+            if messages && messages.error
+                .alert= messages.error
+
+            .button-container
+                button(type="submit").btn.btn-primary  Submit
+
+            //- Skip this step link and redirect to the Add City page
+            .link-container
+                a(href="/admin/add-city-form").btn-link Skip this step
+

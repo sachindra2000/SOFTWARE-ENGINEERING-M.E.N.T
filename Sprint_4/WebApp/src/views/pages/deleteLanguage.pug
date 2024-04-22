@@ -1,0 +1,24 @@
+extends ../layouts/layout.pug
+
+block content
+    //- Delete Language Page
+    body.register-bg
+        p.introduction(style="margin-top: 18rem;") Remove Language
+
+        //- Delete Language Form        
+        form(action="/delete-language", method="POST").contact-form-container
+            label(for="language") Language
+            input(type="text", name="language", required=true)
+            label(for="countryCode") Country Code
+            input(type="text", name="countryCode", required=true)
+
+            //- Display error messages
+            if messages && messages.error
+                .alert.alert-danger= messages.error
+
+            .button-container
+                button(type="submit").btn.btn-danger Delete
+
+            //- Skip this step link and redirect to the Delete City page
+            .link-container
+                a(href="/admin/delete-city-form").btn-link Skip this step

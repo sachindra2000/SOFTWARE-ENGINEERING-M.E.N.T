@@ -1,0 +1,31 @@
+extends ../layouts/layout.pug
+
+block content
+    body.population-bg
+    
+    .header-container
+        h1.header-title Population Report
+
+    .form-section
+        form(action='/populations' method='get')
+            select#viewBySelect(name='viewBy')
+                option(value='Continent' selected=viewBy==='Continent') By Continent
+                option(value='Country' selected=viewBy==='Country') By Country
+                option(value='Region' selected=viewBy==='Region') By Region
+            button(type='submit') Apply
+
+    .table-section
+        table
+            thead
+                tr
+                    th Name
+                    th Total Population
+                    th Population Living in Cities
+                    th Population Not Living in Cities
+            tbody
+                each report, index in reports
+                    tr
+                        td= report.Name
+                        td= report.TotalPopulation
+                        td= report.CityPopulation
+                        td= report.NonCityPopulation

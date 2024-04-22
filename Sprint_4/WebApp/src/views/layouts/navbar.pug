@@ -1,0 +1,33 @@
+//- Navbar layout for the website
+
+header
+    nav.navbar
+        .navbar-left
+            a(href="/") Home
+        .navbar-center
+           
+            //- Navbar Population Data links
+            ul
+                li
+                a(href="/countries") Country
+                li
+                a(href="/cities") City
+                li
+                a(href="/capitals") Capital
+                li
+                a(href="/populations") Population
+                li
+                a(href="/language") Language
+
+        .navbar-right
+            
+            //- Navbar Admin links
+            if user && user.isAdmin
+                a(href="/admin/add-country-form" style="color: #8ecae6;") Add
+                a(href="/admin/delete-language-form" style="color: #8ecae6;") Delete
+            
+            //- Navbar Login/Logout button
+            if isAuthenticated
+                a(href="/logout" class="button") Logout
+            else
+                a(href="/login" class="button") Log In
