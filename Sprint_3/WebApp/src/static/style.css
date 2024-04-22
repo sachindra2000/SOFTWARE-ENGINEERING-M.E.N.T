@@ -1,0 +1,331 @@
+ /********** Layout Global Styles ***********/
+ 
+/* Reset default browser styles */
+ html,
+body {
+    font-size: 14px; /* Default font size */
+    font-family: 'Poppins', sans-serif; /* Default font family */
+    background-color: #eeeeee; /* Default background color */
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
+    width: 100%; /* Ensure the body does not overflow */
+    overflow-x: hidden; /* Hide horizontal scroll */
+    box-sizing: border-box; /* Include padding and border in the element's width and height */
+}
+
+/* Space between main content and Footer */
+main {
+    padding-bottom: 15rem;
+}
+
+
+/********** CSS Styles for Navbar ***********/
+
+nav.navbar {
+    background: #2b2d42; /* Updated background color */
+    padding: 10px; /* Navbar's padding */
+    display: flex; /* Flexbox for alignment */
+    justify-content: space-between; /* Positions items to the left, center, and right */
+    align-items: center; /* Vertically align items in the navbar */
+    position: fixed; /* Fixed positioning makes the navbar stay at the top */
+    top: 0; /* Align the navbar at the top */
+    left: 0; /* Align the navbar to the left */
+    right: 0; /* Stretch the navbar to the right */
+    box-shadow: 0 3px 7px rgba(0, 0, 0, 0.5); /* Shadow for depth */
+    z-index: 1000; /* Ensures navbar stays above other content */
+}
+
+/* Navbar links */
+.navbar-left a,
+.navbar-center a,
+.navbar-right a {
+    display: block; /* Block-level elements for full clickable area */
+    color: white; /* Text color */
+    text-align: center; /* Center the text */
+    padding: 15px 20px; /* Padding for clickable area */
+    text-decoration: none; /* No underline for links */
+    font-size: 16px; /* Font size */
+    font-weight: bold; /* Font weight */
+}
+
+.navbar-left,
+.navbar-center ul,
+.navbar-right {
+    display: flex; /* Flexbox for alignment */
+    align-items: center; /* Vertically align items in the navbar */
+}
+
+/* Navbar report links */
+.navbar-center ul {
+    list-style: none; /* Remove default list style */
+    justify-content: center; /* Center the list items */
+    flex-grow: 1; /* Allows the list to take up available space */
+    padding: 0; /* Remove default padding */
+    margin: 0; /* Remove default margin */
+}
+
+.navbar-center ul li {
+    margin: 0 10px; /* Space out the list items */
+}
+
+.navbar-right {
+    margin-right: 10px; /* Space for the right side of the navbar */
+}
+
+/* Navbar button */
+.navbar-right a.button {
+    background-color: #05668d; /* Button color */
+    border: none; /* Remove default border */
+    padding: 12px 12px; /* Padding for the button */
+    font-weight: bold; /* Font weight */
+    border-radius: 5px; /* Rounded corners */
+    text-decoration: none; /* No underline */
+    color: #fff; /* Text color */
+    transition: background-color 0.3s ease; /* Smooth transition on hover */
+    margin-left: 10px; /* Separate the button from other links */
+    margin-right: 32px; /* Space from the right */
+}
+
+/* Navbar button hover effect */
+.navbar-right a.button:hover {
+    background-color: #028090; /* Button color on hover */
+    transform: scale(1.05); /* Slightly increase the button size on hover */
+}
+
+/********** CSS Styles for Footer ***********/
+
+footer {
+    background: #2b2d42; /* Background color */
+    color: white; /* Text color */
+    padding: 10px; /* Padding */
+    display: flex; /* Flexbox for alignment */
+    align-items: center; /* Vertically align items in the footer */
+    justify-content: space-between; /* Positions text to the center and icon to the end */
+    text-align: center; /* Ensure text is centered */
+    position: fixed; /* Fix footer to the bottom */
+    bottom: 0; /* Align the footer at the bottom */
+    left: 0; /* Align the footer to the left */
+    right: 0; /* Stretch the footer to the right */
+    font-size: 13px; /* Footer's font size */
+    box-shadow: 0 -1px 7px rgba(0, 0, 0, 0.5); /* Shadow for depth, inverted direction */
+}
+
+/* Footer links */
+footer a {
+    color: white; /* Icon color */
+    display: flex; /* Ensures the link is properly aligned */
+    align-items: center; /* Center the icon vertically */
+    text-decoration: none; /* No underline for the link */
+    margin-right: 10px; /* Align the icon to the right */
+}
+
+/* Footer icon */
+footer i {
+    font-size: 20px; /* Icon size */
+}
+
+/* Footer text */
+footer p {
+    margin: 0; /* Remove default margin */
+    padding-right: 20px; /* Space after the text, before the icon */
+    text-align: center; /* Ensures the text is centered */
+    flex-grow: 1; /* Allows the text to take up available space, pushing the icon to the end */
+}
+
+
+/************** All report pages title ************/
+
+h1 {
+    text-align: center; /* Center the title */
+    margin-top: 10rem; /* Space from the top */
+    color: #073b4c; /* Title's color */
+    font-size: 3rem;  /* Title's font size */
+}
+
+/************** Table ************/
+
+table {
+    width: 90%; /* Table width */
+    border-collapse: collapse; /* Collapse borders into a single border */
+    margin: 3rem auto; /* Center the table */
+    margin-top: 8rem; /* Space from the top */
+}
+
+/* Table Cells styles */
+th, td {
+    border: 1px solid #ddd; /* Border color */
+    padding: 10px; /* Padding inside the table cells */
+    text-align: left; /* Text alignment */
+}
+
+/* Table header styles */
+thead {
+    background-color: #f2f2f2; /* Header background color */
+}
+
+/* Table row styles */
+tr:nth-child(even) {
+    background-color: #f9f9f9; /* Alternate row color */
+}
+
+/* Table row hover effect */
+tr:hover {
+    background-color: #dddada; /* Hover row color */
+}
+
+/* Table header text styles */
+th {
+    padding-top: 20px; /* Padding top */
+    padding-bottom: 24px; /* Padding bottom */
+    background-color: #666; /* Header background color */
+    text-align: center; /* Text alignment */
+    color: white; /* Text color */
+}
+
+
+/*********** Search input *************/
+
+#searchInput {
+    width: 150px;        /* Width of the search box */
+    height: 30px;        /* Height of the search box */
+    border: 1px solid #ddd; /* Border color */
+    border-radius: 20px; /* Rounded corners */
+    padding: 1px 8px;   /* Padding inside the search box */
+    margin-top: 48px;    /* Spacing between the search box and the table */
+    font-size: 16px;     /* Font size inside the search box */
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2); /* Add shadow for depth */
+    outline: none;       /* Remove the default focus outline */
+}
+
+/*********** Home page styling *************/
+
+/* Header Image */
+header img {
+    width: 100%; /* Full viewport width */
+    height: 100vh; /* Full viewport height */
+    object-fit: cover; /* Cover the entire container */
+    display: flex; /* Flex container */
+    flex-direction: column; /* Flex direction column */
+    justify-content: center; /* Center vertically */
+    align-items: center; /* Center horizontally */
+    text-align: center; /* Center the text */
+}
+
+/* Header's first text */
+header h2 {
+    position: absolute; /* Position absolutely within the relative container */
+    top: 20%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Adjust positioning to truly center */
+    color: #4a4e69; /* Adjust color as needed */
+    font-size: 3rem; /* Adjust size as needed */
+}
+
+/* Header's second text */
+header h3 {
+    position: absolute; /* Position h3 absolutely within the relative container */
+    top: 55%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Adjust positioning to truly center */
+    color: #b5838d; /* Adjust color as needed */
+    font-size: 3rem; /* Adjust size as needed */
+    background-color: rgba(0, 0, 0, 0.4); /* Semi-transparent background */
+    padding: 0 1.3rem; /* Padding around the text */
+    border-radius: 30px; /* Rounded corners */
+}
+
+/* Blinking text animation */
+.blinking-word {
+    animation: blink-animation 4s infinite; /* Blinking animation */
+  }
+  
+  @keyframes blink-animation {
+    0%, 100% { opacity: 1; } /* Start and end with opacity 1 */
+    50% { opacity: 0; } /* Halfway opacity 0 */
+}  
+
+/* Home page title */
+h4 {
+    text-align: center; /* Center the heading */
+    margin: 10rem; /* Space from the top */
+    color: #4a4e69; /* Heading color */
+    font-size: 3rem;  /* Heading font size */
+
+}
+
+/* Introduction and ending text */
+.introduction {
+    color: #6c757d; /* Default text color, change as needed */
+    font-size: 1.5rem; /* Default font size, change as needed */
+    margin: 2rem auto; /* Vertical margins with auto horizontal margins */
+    text-align: center; /* Center align text if it wraps to multiple lines */
+    max-width: 63%; /* Maximum width with auto margins will center the text block */
+    padding: 1rem; /* Add padding if you want some space inside the text block */
+}
+
+/* Main content blocks */
+.how-it-works-container {
+    display: flex; /* Establish flex container */
+    align-items: center; /* Center align vertically */
+    justify-content: flex-start; /* Align items to the left */
+    margin-top: 10rem; /* Margin top */
+    margin-bottom: 12rem; /* Provide bottom margin for space */
+}
+
+/* Screenshot and description blocks */
+.screenshot, .description {
+    flex: 1; /* Assign flex grow to both so they share the space */
+    max-width: 50%; /* Max width set to half of the container width */
+    margin: 0 3.5rem; /* Add margin for spacing */
+}
+
+/* Screenshot image */
+.screenshot img {
+    border-radius: 25px; /* Rounded borders */
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2); /* Drop shadow */
+    max-width: 100%; /* Width to take in his block */
+    height: auto; /* Maintain aspect ratio */
+}
+
+/* Icon container */
+.icon-header-container {
+    display: flex; /* Establish flex container */
+    align-items: center; /* Center align vertically */
+    gap: 0.5rem; /* Add some space between the icon and the text */
+}
+
+/* Custom CSS for all Font Awesome `solid` types of icons */
+.fa-solid {
+    color: #05668d; /* Icon color */
+    font-size: 2rem; /* Icon size */
+}
+
+/* Screenshot's description title */
+.description h5 {
+    font-size: 1.5rem; /* Font size */
+    color: #05668d; /* Text color */
+    margin:0.5rem; /* Margin between the description title and icon */
+}
+
+/* Screenshot description paragraph */
+.description p {
+    font-size: 1.2rem; /* Font size */
+    color: #6c757d; /* Text color */
+}
+
+/* Gradient line that separes the blocks */
+.gradient-line {
+    height: 1px; /* Thickness of the line */
+    background: linear-gradient(to right, transparent, #bfbdc1, transparent); /* Gradient line */
+    box-shadow: 0 0px 0px rgba(0, 0, 0, 0.1); /* Shadow effect */
+    width: 80%; /* Width on the page */
+    margin: 2rem auto; /* Center the line horizontally */
+}
+  
+/******** Search box *************/
+
+/* Change border and shadow when the search box is clicked on (is in focus) */
+#searchInput:focus {
+    border-color: #aaa;  /* Darker border on focus */
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.2); /* Add shadow for depth */
+}
