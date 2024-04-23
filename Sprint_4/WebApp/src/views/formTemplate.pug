@@ -11,3 +11,18 @@ mixin form(actionUrl, searchInputName, searchInputPlaceholder)
         input#topNInput(type='number' name='topN' placeholder='Top N countries' min='1' style='width: 150px;')
         button(type='submit') Apply
 
+
+//- Add a specific mixin for City page filters
+mixin cityForm(actionUrl, searchInputName, searchInputPlaceholder)
+    form(action=actionUrl method='get' style='text-align: center;')
+        input#searchInput(type='text' name=searchInputName placeholder=searchInputPlaceholder)
+        select#continentSelect(name='continent')
+            option(value='') Select Continent
+        select#regionSelect(name='region')
+            option(value='') Select Region
+        select#countrySelect(name='country')
+            option(value='') Select Country
+        select#districtSelect(name='district')
+            option(value='') Select District
+        input#topNInput(type='number' name='topN' placeholder='Top N cities' min='1' style='width: 150px;')
+        button(type='submit') Apply
