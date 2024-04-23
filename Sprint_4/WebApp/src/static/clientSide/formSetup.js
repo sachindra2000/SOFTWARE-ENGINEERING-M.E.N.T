@@ -1,33 +1,60 @@
-// Client Side JavaScript for the continent and region select dropdowns
-
 document.addEventListener('DOMContentLoaded', function() {
     const continentSelect = document.getElementById('continentSelect');
     const regionSelect = document.getElementById('regionSelect');
+    const countrySelect = document.getElementById('countrySelect');
+    const districtSelect = document.getElementById('districtSelect');
 
-    // Fetch the list of continents and populate the dropdown
-    fetch('/continents').then(response => response.json()).then(data => {
-        data.forEach(continent => {
-            const option = new Option(continent, continent);
-            continentSelect.add(option);
-        });
-    });
+    // Initialize dropdowns
+    initializeDropdowns();
 
-    // Fetch the list of regions based on the selected continent and populate the dropdown
-    continentSelect.addEventListener('change', function() {
-        const continent = this.value;
-        regionSelect.innerHTML = '<option value="">Select Region</option>'; // Reset
+    // Reset and initialize all dropdowns
+    function initializeDropdowns() {
+        fetchDropdownData('/continents', continentSelect, 'Continent');
+        fetchDropdownData('/regions', regionSelect, 'Region');
+        fetchDropdownData('/country_route', countrySelect, 'Country');
+        fetchDropdownData('/districts', districtSelect, 'District');
+    }
 
-        if (!continent) return;
-
-        // Fetch the regions based on the selected continent
-        fetch(`/regions/${continent}`).then(response => response.json()).then(data => {
-            data.forEach(region => {
-                const option = new Option(region, region);
-                regionSelect.add(option);
+    // General function to fetch data and populate dropdown
+    function fetchDropdownData(url, dropdown, placeholder) {
+        fetch(url).then(response => response.json()).then(data => {
+            dropdown.innerHTML = `<option value=''>Select ${placeholder}</option>`;
+            data.forEach(item => {
+                const option = new Option(item, item);
+                dropdown.add(option);
             });
         });
+    }
+
+    // Event listeners for dropdown changes
+    continentSelect.addEventListener('change', function() {
+        if(this.value) {
+            resetDropdowns(regionSelect, countrySelect, districtSelect);
+        }
     });
+
+    regionSelect.addEventListener('change', function() {
+        if(this.value) {
+            resetDropdowns(continentSelect, countrySelect, districtSelect);
+        }
+    });
+
+    countrySelect.addEventListener('change', function() {
+        if(this.value) {
+            resetDropdowns(continentSelect, regionSelect, districtSelect);
+        }
+    });
+
+    districtSelect.addEventListener('change', function() {
+        if(this.value) {
+            resetDropdowns(continentSelect, regionSelect, countrySelect);
+        }
+    });
+
+    // Function to reset other dropdowns
+    function resetDropdowns(...dropdowns) {
+        dropdowns.forEach(dropdown => {
+            dropdown.selectedIndex = 0; // Reset to the first item
+        });
+    }
 });
-
-
-
