@@ -1,11 +1,14 @@
 extends ../layouts/layout.pug
 
+//- Define the main content block where page-specific content will go.
 block content
     body.population-bg
-    
+
+    //-Container for the page header and header title
     .header-container
         h1.header-title Population Report
 
+    //- Section for the form that allows users to filter the population data.
     .form-section
         form(action='/populations' method='get')
             select#viewBySelect(name='viewBy')
@@ -14,6 +17,7 @@ block content
                 option(value='Region' selected=viewBy==='Region') By Region
             button(type='submit') Apply
 
+    //-Section that contains the table for displaying population data.
     .table-section
         table
             thead
