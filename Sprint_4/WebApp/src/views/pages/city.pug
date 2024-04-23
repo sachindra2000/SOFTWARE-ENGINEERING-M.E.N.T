@@ -2,16 +2,14 @@ extends ../layouts/layout.pug
 include ../formTemplate.pug
 
 block content
-    //- City Data page
     body.city-bg
     .header-container
         h1.header-title City Data
 
-    //- City search form   
-    +form('/cities','cityName', 'Search cities...')
+    // Use specific city form
+    +cityForm('/cities','cityName', 'Search cities...')
     
     table
-        //- City table header
         thead
             tr
                 th Sl/No  
@@ -20,9 +18,7 @@ block content
                 th District
                 th Population
         
-        //- City Table Data
         tbody
-            //- Loop through cities
             - var counter = 0
             each city in cities
                 - counter++
@@ -33,13 +29,8 @@ block content
                     td= city.District
                     td= city.Population.toLocaleString() 
 
-    //- Scroll-to-Top Button
+    // Additional UI components
     button#scrollToTopButton
-
-    //- Scroll-to-Bottom Button
     button#scrollToBottomButton
-
-    //- JS Scripts
     script(src="/clientSide/scroll.js")
     script(src="/clientSide/formSetup.js")
-
