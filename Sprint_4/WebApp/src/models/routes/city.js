@@ -4,6 +4,7 @@ module.exports = (app, db, { checkAuthenticated }) => {
     app.get("/cities", checkAuthenticated, (req, res) => {
         const { cityName, continent, region, country, district, topN } = req.query;
 
+        // Construct the SQL query to retrieve the cities and their details form database
         let sql = `
         SELECT city.*, country.Name AS CountryName, country.Continent, country.Region
         FROM city
@@ -11,6 +12,7 @@ module.exports = (app, db, { checkAuthenticated }) => {
         WHERE TRUE
         `;
 
+        // Create an empty array to store the parameters for the SQL query
         const params = [];
         
         if (cityName) {
