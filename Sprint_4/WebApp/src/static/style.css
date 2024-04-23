@@ -372,7 +372,7 @@ h4 {
 /*********** Dropdown Menus *************/
 
 /* Style the dropdown container */
-#continentSelect, #regionSelect {
+#continentSelect, #regionSelect, #countrySelect, #districtSelect {
     width: 165px;        /* Width of the dropdown to align with the search box */
     height: 34px;        /* Height to match the search input */
     border: 1px solid #ddd; /* Border to match the search input */
@@ -387,7 +387,7 @@ h4 {
 }
 
 /* Style the options */
-#continentSelect option, #regionSelect option {
+#continentSelect option, #regionSelect option, #countrySelect option, #districtSelect option {
     color: black; /* Text color for options */
 }
 
