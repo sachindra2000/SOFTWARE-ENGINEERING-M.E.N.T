@@ -15,28 +15,41 @@ module.exports = (app, db, { checkAuthenticated }) => {
         // Create an empty array to store the parameters for the SQL query
         const params = [];
         
+        // Add a condition to the SQL query if a city is provided, to filter the results
         if (cityName) {
             sql += " AND city.Name LIKE ?";
             params.push(`%${cityName}%`);
         }
+
+        // Add a condition to the SQL query if a continent is selected, to filter the results
         if (continent) {
             sql += " AND country.Continent = ?";
             params.push(continent);
         }
+
+        // Add a condition to the SQL query if a region is selected, to filter the results
         if (region) {
             sql += " AND country.Region = ?";
             params.push(region);
         }
+
+        // Add a condition to the SQL query if a country is selected, to filter the results
         if (country) {
             sql += " AND country.Name = ?";
             params.push(country);
         }
+
+        // Add a condition to the SQL query if a district is selected, to filter the results
         if (district) {
             sql += " AND city.District = ?";
             params.push(district);
         }
+
+        //sort the city data by population 
         sql += " ORDER BY city.Population DESC";
 
+
+        //to show top N result of city page
         if (topN) {
             const nValue = parseInt(topN, 10);
             if (isNaN(nValue) || nValue <= 0) {
@@ -46,6 +59,8 @@ module.exports = (app, db, { checkAuthenticated }) => {
             sql += ` LIMIT ${db.escape(nValue)}`;
         }
 
+
+        // Execute the SQL query with the specified parameters
         db.execute(sql, params, (err, results) => {
             if (err) {
                 console.error('SQL Error:', err);
@@ -85,7 +100,8 @@ module.exports = (app, db, { checkAuthenticated }) => {
             }
         });
     });
-
+     
+    // Fetch all country
     app.get("/country_route", (req, res) => {
         const sql = "SELECT DISTINCT Name FROM country ORDER BY Name";
         db.query(sql, [], (err, results) => {
